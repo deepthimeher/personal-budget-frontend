@@ -1,0 +1,108 @@
+.budgetContainer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 24px;
+}
+.budgetHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    justify-content: space-between;
+}
+.budgetHeadertext{
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 12px;
+}
+.btn{
+    font-size: 24pxpx;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    background-color: darkcyan;
+    color: white;
+    padding: 14px;
+    border-radius: 24px;
+    text-align: center;
+    outline: none;
+    border: none;
+    margin-right: 12px;
+}
+.critriaBlock{
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 32px;
+}
+.critriaBlocktext{
+    margin-left: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.criterias{
+    display: flex;
+    flex-direction: row;
+    margin-right: 16px;
+    gap: 32px;
+}
+.criteriasdropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+.dropdown{
+    width: 120px;
+    height: 40px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.label{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.input{
+    width: 100px;
+    height: 20px;
+    background-color: darkcyan;
+    color: white;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+.table{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 12px;
+}
+td{
+    width: 500px;
+    height: 70px;
+}

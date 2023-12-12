@@ -1,0 +1,28 @@
+<div class="signUpContainer">
+    <div class="signUpBlock">
+        <div class="signUp">
+            <form class="signUpForm" [formGroup]="signUpForm" (ngSubmit)="onSignin()">
+                <div class="signUpHeader">SignUp</div>
+                <div class="inputFields">
+                    <label class="signUpLabels">Name</label>
+                    <input type="text" class="input" formControlName="name">
+                </div>
+                <div class="inputFields">
+                    <label class="signUpLabels">Email</label>
+                    <input type="text" class="input" formControlName="email">
+                </div>
+                <div class="inputFields">
+                    <label class="signUpLabels">Phone</label>
+                    <input type="text" class="input" formControlName="phone" (input)="onInput($event)">
+                </div>
+                <div class="inputFields">
+                    <label class="signUpLabels">Password</label>
+                    <input type="password" class="input" formControlName="password">
+                </div>
+                <button class="btn" type="submit">SignUp</button>
+                <div class="loginTexterror" *ngIf="message">{{message}}</div>
+                <div class="loginText" *ngIf="showLoginLink">User Signed Up Successfully click here to <a (click)="onLogin()" class="loginLink">Login</a></div>
+            </form>
+        </div>
+    </div>
+</div>

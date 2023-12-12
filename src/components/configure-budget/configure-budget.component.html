@@ -1,0 +1,71 @@
+<div class="budgetContainer">
+    <div class="budgetHeader">
+        <div class="budgetHeadertext">Configure your Budget here</div>
+        <div style="display: flex;flex-direction: row;gap: 24px;">
+            <button class="btn" (click)="onDashBoard()">Go to Dashboard</button>
+            <button class="btn" (click)="onLogout()">Log Out</button>
+        </div>
+    </div>
+    <div class="critriaBlock">
+        <div class="critriaBlocktext">Please select the Month and Year for Configuring the budget.</div> 
+        <div class="criterias"> 
+            <div class="criteriasdropdown">
+                <label class="label">Month</label>
+                <select class="dropdown" [(ngModel)]="month">
+                    <option *ngFor="let data of monthdatadropdown" [value]="data.value">{{data.desc}}</option>
+                </select>
+            </div>
+            <div class="criteriasdropdown">
+                <label class="label">Year</label>
+                <input type="text" [(ngModel)]="year" class="input" maxlength="4" (input)="onInput($event)">
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="category">
+              <th mat-header-cell *matHeaderCellDef>Category</th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="element.isnew">
+                    <input [value]="element.category" [(ngModel)]="element.category">
+                </ng-container>
+                <ng-container *ngIf="!element.isnew">
+                    {{element.category}}
+                </ng-container>
+            </td>
+            </ng-container>
+      
+            <!-- Name Column -->
+            <ng-container matColumnDef="value">
+              <th mat-header-cell *matHeaderCellDef>Amount</th>
+              <td mat-cell *matCellDef="let element">
+                <input [value]="element.amount" [(ngModel)]="element.amount" (input)="getTotal();onInput($event)">
+            </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element;let i = index">
+                  <mat-icon style="cursor: pointer;" (click)="onDelete(i)">delete</mat-icon>
+              </td>
+              </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+    <div style="display: flex;justify-content: center; align-items: center; flex-direction: row;gap: 32px;">
+        <span style="font-size: 18px;font-weight: 600;">Total - $ {{getTotal()}}</span>
+    </div>
+    <div style="display: flex;justify-content: center; align-items: center; flex-direction: row;gap: 32px;">
+        <button class="btn" (click)="onAdd()">Add Category</button>
+        <button class="btn" (click)="onSaveBudget()">Save Budget</button>
+    </div>
+    <div style="display: flex;justify-content: center; align-items: center;" >
+        <div style="color: green;font-size: 16px;" *ngIf="successmessage">{{successmessage}}</div>
+        <div style="color: red;font-size: 16px;" *ngIf="errormessage">{{errormessage}}</div>
+    </div>
+    
+</div>

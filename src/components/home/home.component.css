@@ -1,0 +1,76 @@
+.homeContainer{
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: url('src/assets/images/backgroundimg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    flex-direction: column;
+}
+.headingtext{
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.tagLineText{
+    font-size: 22px;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.heading{
+    margin-top: 100px;
+    margin-right: 100px;
+}
+.tagLine{
+    margin-top: 20px;
+    margin-right: 100px;
+}
+.login{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+}
+.loginText{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.loginbtn{
+    height: 40px;
+    width: 120px;
+    border-radius: 24px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.704);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.loginbtn:active{
+    scale: 0.9;
+}
+.loginsignup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    margin-right: 100px;
+}

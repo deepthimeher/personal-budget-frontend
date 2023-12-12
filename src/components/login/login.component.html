@@ -1,0 +1,19 @@
+<div class="loginContainer">
+    <div class="loginBlock">
+        <div class="login">
+            <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                <div class="loginHeader">Login</div>
+                <div class="inputFields">
+                    <label class="loginLabels">Email</label>
+                    <input type="text" class="input" formControlName="email">
+                </div>
+                <div class="inputFields">
+                    <label class="loginLabels">Password</label>
+                    <input type="password" class="input" formControlName="password">
+                </div>
+                <button class="btn">Login</button>
+                <div class="loginTexterror" *ngIf="message">{{message}}</div>
+            </form>
+        </div>
+    </div>
+</div>

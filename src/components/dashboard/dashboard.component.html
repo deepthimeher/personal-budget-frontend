@@ -1,0 +1,45 @@
+<div class="dashboardContainer">
+    <div class="dashboardheader">
+        <div class="dashboardheading">
+            <span class="dashboardheadingtext">Welcome {{userName}}</span>
+        </div>
+        <div class="dashboardLinks">
+            <span class="dashboardLinkstext" (click)="onConfigure()">Configure Budget</span>
+            <span class="dashboardLinkstext" (click)="onExpenses()">Enter Expenses</span>
+            <span class="dashboardLinkstext" (click)="onLogout()">Log Out</span>
+        </div>
+    </div>
+    <div class="critriaBlock"  *ngIf="!showMessage">
+      <div class="critriaBlocktext">Please select the Month and Year to view the data.</div> 
+      <div class="criterias"> 
+          <div class="criteriasdropdown">
+              <label class="label">Month</label>
+              <select class="dropdown" [(ngModel)]="selectedMonth" (change)="showChartsData()">
+                  <option *ngFor="let data of monthdatadropdown" [value]="data.value">{{data.desc}}</option>
+              </select>
+          </div>
+          <div class="criteriasdropdown">
+              <label class="label">Year</label>
+              <input type="text" [(ngModel)]="selectedYear" class="input" maxlength="4" (input)="onInput($event)">
+          </div>
+      </div>
+  </div>
+  <div *ngIf="message!==''" style="font-size: 24px; font-weight: 600;display: flex;align-items: center;justify-content: center;">{{message}}</div>
+
+    <div class="chartssection" *ngIf="!showMessage" [ngClass]="message!==''?'hidden':''">
+        <div class="chart">
+            <div>Expenses in the selected month of year</div>
+            <canvas id="myChart1"></canvas>
+          </div>
+          <div class="chart">
+            <div>Expenses vs Budget in the selected month of year</div>
+            <canvas id="myChart2"></canvas>
+          </div>
+          <div class="chart">
+            <div>Budget in the selected month of year</div>
+            <canvas id="myChart3"></canvas>
+          </div>
+    </div>
+    <div *ngIf="showMessage" style="font-size: 24px; font-weight: 600;display: flex;align-items: center;justify-content: center;">Budget and Expense Data is not available please configure the respective data</div>
+    
+</div>
